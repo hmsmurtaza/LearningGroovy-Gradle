@@ -1,13 +1,11 @@
 task groovy doLast{}
 
-def foo = 6.5
+def doubleInt(n) {
+    n + n // Note we don't need a return statement
+}
 
-println "foo has value: $foo"
+def foo = 5
+println "doubleInt($foo) = ${doubleInt(foo)}"
 
-println "Let's do some math. 5+6 = ${5 + 6}"
-
-println "foo is of type: ${foo.class} and has value: $foo"
-
-foo = "a string"
-
-println "foo is now of type: ${foo.class} and has value $foo"
+foo = "foobar"
+println "doubleInt($foo) = ${doubleInt(foo)}"
