@@ -1,11 +1,19 @@
-task groovy doLast{}
+task groovy doLast {}
 
-def doubleInt(n) {
-    n + n // Note we don't need a return statement
+def noArgs(){
+    println "Called the no arguments function"
 }
 
-def foo = 5
-println "doubleInt($foo) = ${doubleInt(foo)}"
+def oneArg(x) {
+    println "Called the one argument function with $x"
+}
 
-foo = "foobar"
-println "doubleInt($foo) = ${doubleInt(foo)}"
+def twoArgs(x, y) {
+    println "Called with two arguments function with $x and $y"
+}
+
+noArgs()
+
+oneArg(9)
+
+twoArgs 6, 3
