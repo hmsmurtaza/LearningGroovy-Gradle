@@ -1,7 +1,15 @@
 task groovy doLast {}
 
-def myList = ["Gradle", "Groovy", "Android"]
-def printItem = {item -> println "List item: $item"}
-myList.each(printItem)
+class GroovyGreeter {
+    String greeting = "Default greeting"
+    def printGreeting(){println "Greeting: $greeting"}
+}
 
-myList.each{println "Compactly printing each list item: $it"}
+def myGroovyGreeter = new GroovyGreeter()
+
+def greetingClosure = {
+    greeting = "Setting the greeting from a closure"
+    printGreeting()
+}
+greetingClosure.delegate = myGroovyGreeter
+greetingClosure()
