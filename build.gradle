@@ -1,15 +1,4 @@
 task groovy doLast {}
 
-class GroovyGreeter {
-    String greeting = "Default greeting"
-    def printGreeting(){println "Greeting: $greeting"}
-}
-
-def myGroovyGreeter = new GroovyGreeter()
-
-def greetingClosure = {
-    greeting = "Setting the greeting from a closure"
-    printGreeting()
-}
-greetingClosure.delegate = myGroovyGreeter
-greetingClosure()
+def foo = "bar"
+println "$foo + foo = ${foo + "foo"}"
