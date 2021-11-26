@@ -1,0 +1,4 @@
+task Hello {
+    group "Hello"
+    description "This's my first Gradle Task"
+}
