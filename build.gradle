@@ -1,10 +1,7 @@
 task groovy doLast {}
 
-def doubleIt = {x -> x + x}
-def applyTwice(func, arg){
-    func(func(arg))
-}
+def myList = ["Gradle", "Groovy", "Android"]
+def printItem = {item -> println "List item: $item"}
+myList.each(printItem)
 
-def foo = 5
-def fooDoubledTwice = applyTwice(doubleIt, foo)
-println "Applying double twice to $foo equals $fooDoubledTwice"
+myList.each{println "Compactly printing each list item: $it"}
