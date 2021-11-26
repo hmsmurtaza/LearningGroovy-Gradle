@@ -1,11 +1,10 @@
 task groovy doLast {}
 
-def foo = "One million dollars"
-def myClosure = {
-    println "Hello from a closure"
-    println "The value of foo is $foo"
+def doubleIt = {x -> x + x}
+def applyTwice(func, arg){
+    func(func(arg))
 }
 
-def bar = myClosure
-def baz = bar
-baz()
+def foo = 5
+def fooDoubledTwice = applyTwice(doubleIt, foo)
+println "Applying double twice to $foo equals $fooDoubledTwice"
